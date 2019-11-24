@@ -2,10 +2,10 @@
 
 [ext_resource path="res://artAssets/Backgrounds/cave_test_bkg2.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Project2-ScubaGame/artAssets/Backgrounds/cave_test_bkg.png" type="Texture" id=3]
+[ext_resource path="res://artAssets/Backgrounds/cave_test_bkg.png" type="Texture" id=3]
 [ext_resource path="res://artAssets/Backgrounds/darkness.png" type="Texture" id=4]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 # Declare member variables here. Examples:
@@ -22,11 +22,11 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 840.382, 290.609, 838.819, 351.556, 880.232, 346.087, 888.827, 296.86 )
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 
 [node name="background2" type="Sprite" parent="."]
 position = Vector2( 1349.76, 452.312 )
@@ -51,4 +51,4 @@ texture = ExtResource( 4 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2( 0, 14.7328 )
 z_index = 1
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )

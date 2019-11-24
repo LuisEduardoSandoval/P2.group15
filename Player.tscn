@@ -1571,6 +1571,7 @@ z_index = 11
 z_as_relative = false
 texture = ExtResource( 6 )
 offset = Vector2( 510.352, -6.65987 )
+energy = 2.7
 shadow_enabled = true
 
 [node name="Leg_R" type="Sprite" parent="Hip"]
