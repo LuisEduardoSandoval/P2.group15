@@ -16,12 +16,12 @@ func get_input():
 	if Input.is_action_pressed('right'): 
 		velocity.x += 1 
 		get_node("root/AnimationPlayer").play("Move") 
-#		get_node("root").set_scale(Vector2(1,1)) #flips horazontally
+		get_node("root").set_scale(Vector2(1,1)) #flips horazontally
 		lastXpos = false 
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
 		get_node("root/AnimationPlayer").play("Move")
-#		get_node("root").set_scale(Vector2(-1,1))
+		get_node("root").set_scale(Vector2(-1,1))
 		lastXpos = true
 		
 	if Input.is_action_pressed('down'):
@@ -38,13 +38,16 @@ func _physics_process(delta):
 
 func _process(delta): 
 	Mouse_Position = get_local_mouse_position() #this must be initialized or it will crash when it calls 
+	
 
+	
+	
+	
 	if Input.is_action_pressed('right'): #had to check movement here as it controls rotational diretion of head
 		Mouse_Position = get_local_mouse_position() #if movement in the right direction updates head directional position
 	if Input.is_action_pressed('left'): 
 		Mouse_Position.x = -get_local_mouse_position().x #changes head x to match movements
 		Mouse_Position.y = get_local_mouse_position().y
-#		if Mouse_Position.x 
 	if lastXpos == true:
 		Mouse_Position.x = -get_local_mouse_position().x
 		Mouse_Position.y = get_local_mouse_position().y
@@ -54,7 +57,7 @@ func _process(delta):
 	get_node("root/Hip/Torso/Head").rotation += Mouse_Position.angle() #changes the angle of the head to match mouse
 	if lastXpos == false: #if player is facing right!
 		if get_local_mouse_position().x < $root.position.x : # if players mouse is on or behind root node
-			get_node("root").set_scale(Vector2(-1,1))#models is scaled verticaly and horizontally
+			get_node("root").set_scale(Vector2(-1,1)) #models is scaled verticaly and horizontally
 			lastXpos = true
 	if lastXpos == true: 
 		if get_local_mouse_position().x > $root.position.x :
