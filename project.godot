@@ -19,6 +19,11 @@ config/name="New Game Project"
 run/main_scene="res://KinematicBody2D.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1600
+window/size/height=900
+
 [input]
 
 ui_accept={

@@ -1491,6 +1491,7 @@ tracks/61/keys = {
 position = Vector2( 0.0118866, -0.0077858 )
 
 [node name="Hip" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 7.38234, 0.465278 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -1638,7 +1639,7 @@ texture = ExtResource( 9 )
 offset = Vector2( -40.2416, 1.87569 )
 
 [node name="Hand_L" type="Sprite" parent="."]
-position = Vector2( -0.0179787, -0.0585263 )
+position = Vector2( -0.0179768, -0.058526 )
 rotation = 0.0293564
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
@@ -1659,8 +1660,8 @@ z_index = -5
 texture = ExtResource( 12 )
 
 [node name="Flipper_L" type="Sprite" parent="."]
-position = Vector2( -56.5238, -15.6214 )
-rotation = 0.243341
+position = Vector2( -56.5237, -15.6214 )
+rotation = 0.243342
 scale = Vector2( 0.25, 0.25 )
 z_index = -6
 texture = ExtResource( 13 )

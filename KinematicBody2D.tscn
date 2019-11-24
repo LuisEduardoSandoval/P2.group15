@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://artAssets/Backgrounds/cave_test_bkg.png" type="Texture" id=3]
-[ext_resource path="res://artAssets/Backgrounds/cave_test_bkg2.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.04765
@@ -20,26 +18,3 @@ scale = Vector2( 3.69057, 0.538223 )
 shape = SubResource( 1 )
 
 [node name="root" parent="." instance=ExtResource( 2 )]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = -1319.3
-margin_top = -1061.27
-margin_right = 680.697
-margin_bottom = 938.732
-rect_scale = Vector2( 0.3, 0.3 )
-rect_pivot_offset = Vector2( 1882.81, 1520 )
-texture = ExtResource( 3 )
-stretch_mode = 5
-
-[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-margin_left = 591.986
-margin_top = 3.25803
-margin_right = 2591.99
-margin_bottom = 2003.26
-rect_scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
