@@ -17,12 +17,12 @@ func get_input():
 		velocity.x += 1 
 		get_node("root/AnimationPlayer").play("Move") 
 #		get_node("root").set_scale(Vector2(1,1)) #flips horazontally
-		lastXpos = false 
+#		lastXpos = false 
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
 		get_node("root/AnimationPlayer").play("Move")
 #		get_node("root").set_scale(Vector2(-1,1))
-		lastXpos = true
+#		lastXpos = true
 		
 	if Input.is_action_pressed('down'):
 		velocity.y += 1
@@ -45,6 +45,7 @@ func _process(delta):
 		Mouse_Position.x = -get_local_mouse_position().x #changes head x to match movements
 		Mouse_Position.y = get_local_mouse_position().y
 #		if Mouse_Position.x 
+		
 	if lastXpos == true:
 		Mouse_Position.x = -get_local_mouse_position().x
 		Mouse_Position.y = get_local_mouse_position().y
