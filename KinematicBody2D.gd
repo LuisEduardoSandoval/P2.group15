@@ -1,11 +1,15 @@
 extends KinematicBody2D
 
-export (int) var speed = 200 #character move speed
-var velocity = Vector2() #character velocity in 2 Dimensions
+export var speed = Vector2(200,200) #character move speed
+#var velocity = Vector2() #character velocity in 2 Dimensions
 var Mouse_Position 
 var lastXpos = false #last Direction on axis so head movement is correct false means looking right
 
 
+
+export var gravity: = 30.0
+
+var velocity: = Vector2.ZERO
 
 
 
@@ -32,7 +36,10 @@ func get_input():
 		get_node("root/AnimationPlayer").play("idle")
 	velocity = velocity.normalized()* speed
 
-func _physics_process(delta):
+
+func _physics_process(delta: float) -> void:
+	velocity.y += gravity * delta
+	move_and_slide(velocity)
 	get_input()
 	velocity = move_and_slide(velocity)
 
@@ -66,7 +73,7 @@ func _process(delta):
 
 
 
-
+ 
 
 func _ready():
 	get_node("root/AnimationPlayer").play("idle")
