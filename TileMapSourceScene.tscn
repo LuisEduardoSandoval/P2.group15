@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://artAssets/Custom_tiles/tileset_cave.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 160 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 160, 48, 148, 48, 148, 40, 92, 40, 92, 52, 68, 52, 68, 80, 40, 80, 40, 84, 0, 84, 0, 60, -20, 60, -20, 80, -48, 80, -48, 72, -48, 68, -60, 68, -60, 40, -92, 40, -92, 60, -100, 60, -100, 72, -112, 72, -112, 80, -120, 80, -120, 60, -128, 60, -132, 60, -140, 60, -140, 40, -160, 40, -160, -160, 160, -160 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( -160, 0, -120, 0, -120, -12, -108, -12, -108, -40, -100, -40, -100, -92, -80, -92, -80, -60, -72, -60, -68, -60, -68, -48, -40, -48, -40, -60, -28, -60, -28, -40, -20, -40, -20, -20, -8, -20, -8, 0, 20, 0, 20, -12, 40, -12, 40, 0, 40, 40, 60, 40, 60, 28, 72, 28, 72, 40, 100, 40, 100, 20, 120, 20, 120, 40, 140, 40, 140, 28, 160, 28, 160, -160, -160, -160 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+polygon = PoolVector2Array( -160, -28, -140, -28, -140, -72, -128, -72, -128, -60, -120, -60, -120, -20, -100, -20, -100, -60, -80, -60, -80, -40, -68, -40, -68, -32, -68, -28, -60, -28, -60, -60, -48, -60, -48, -40, -28, -40, -28, 8, -20, 8, -20, 0, -8, 0, -8, -20, 8, -20, 8, 40, 28, 40, 28, 60, 40, 60, 40, 48, 68, 48, 68, 60, 80, 60, 80, 92, 100, 92, 100, 32, 112, 32, 112, 12, 120, 12, 120, -8, 140, -8, 140, 0, 160, 0, 160, 160, -160, 160 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 160, 160 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+polygon = PoolVector2Array( -160, -52, -128, -52, -128, -40, -108, -40, -108, -52, -68, -52, -68, -80, 0, -80, 0, -60, 80, -60, 80, -40, 92, -40, 92, -60, 140, -60, 140, -40, 160, -40, 160, 160, -160, 160 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( -160, -120, 160, -120, 160, 156, 160, 160, -160, 160 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+polygon = PoolVector2Array( -80, 80, 0, 80, 0, 76, -24, 76, -24, 72, -32, 72, -32, 64, -40, 64, -40, 32, -52, 32, -52, -8, -60, -8, -60, -56, -64, -56, -64, 60, -68, 60, -68, 72, -80, 72 )
+
+[node name="Node" type="Node"]
+
+[node name="Tile_Ceiling" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 80, 670 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tile_Ceiling"]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile_Ceiling/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Tile_Ceiling"]
+occluder = SubResource( 2 )
+
+[node name="Tile_Ceiling_angled" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 170, 670 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 0, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tile_Ceiling_angled"]
+editor/display_folded = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tile_Ceiling_angled/StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -160, 8, 140, 160, 160, 160, 160, -160, -160, -160 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Tile_Ceiling_angled"]
+occluder = SubResource( 3 )
+
+[node name="Tile_Floor_angled" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 80, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 960, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tile_Floor_angled"]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tile_Floor_angled/StaticBody2D"]
+polygon = PoolVector2Array( -160, 160, 160, 160, 160, -12, -160, -160 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Tile_Floor_angled"]
+occluder = SubResource( 4 )
+
+[node name="Tile_Floor" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 190, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 960, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tile_Floor"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tile_Floor/StaticBody2D"]
+visible = false
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Tile_Floor"]
+occluder = SubResource( 6 )
+
+[node name="DarkTile" type="Sprite" parent="."]
+position = Vector2( 320, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 0, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DarkTile"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DarkTile/StaticBody2D"]
+visible = false
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="DarkTile"]
+occluder = SubResource( 10 )
+
+[node name="TileSpike" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 270, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 800, 160, 160 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileSpike"]
+occluder = SubResource( 7 )
