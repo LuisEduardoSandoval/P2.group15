@@ -1,11 +1,36 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/LevelTestTemplate.tres" type="TileSet" id=1]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://artAssets/Backgrounds/darkness.png" type="Texture" id=3]
+[ext_resource path="res://artAssets/Backgrounds/water.png" type="Texture" id=4]
+[ext_resource path="res://artAssets/Backgrounds/Cave_front.png" type="Texture" id=5]
+[ext_resource path="res://artAssets/Backgrounds/Cave_Back.png" type="Texture" id=6]
 
 [node name="LevelTest" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 40.1927, 26.1609 )
 tile_set = ExtResource( 1 )
+cell_size = Vector2( 80, 80 )
 format = 1
-tile_data = PoolIntArray( 1, -1073741821, 0, 65559, -1073741820, 0, 131095, -1073741820, 0, 196631, -1073741820, 0, 262167, -1073741820, 0, 327703, -1073741820, 0, 393239, -1073741820, 0, 458775, -1073741820, 0, 524311, -1073741820, 0, 589847, -1073741820, 0, 655383, -1073741820, 0 )
+tile_data = PoolIntArray( -131072, 4, 0, -131071, 4, 0, -65535, 4, 0, 1, 4, 0, 131078, 4, 0, 262149, 4, 0, 589826, 1610612741, 0, 589827, 1610612741, 0, 720895, 4, 0, 655360, 4, 0, 655361, 4, 0, 655362, 4, 0, 655363, 4, 0, 655364, 4, 0, 20185824, 4, 0, 20382136, 4, 0, 20382729, 4, 0 )
+
+[node name="KinematicBody2D" parent="TileMap" instance=ExtResource( 2 )]
+position = Vector2( 562.677, 191.128 )
+
+[node name="darkness" type="Sprite" parent="TileMap"]
+position = Vector2( 253.624, 93.0455 )
+texture = ExtResource( 3 )
+
+[node name="water" type="Sprite" parent="TileMap"]
+position = Vector2( 394.271, 83.7924 )
+texture = ExtResource( 4 )
+
+[node name="Cave_front" type="Sprite" parent="TileMap"]
+position = Vector2( 4.84647, 5.08331 )
+texture = ExtResource( 5 )
+
+[node name="Cave_Back" type="Sprite" parent="TileMap"]
+position = Vector2( 0.972436, -2.34302 )
+texture = ExtResource( 6 )
