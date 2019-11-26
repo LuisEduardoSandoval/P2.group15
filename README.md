@@ -1,6 +1,6 @@
 # Project2-ScubaGame
 
-Complete Development
+Complete Development Deadline: Dec 2 11:59PM
   
   Player Movement
 
@@ -15,10 +15,17 @@ Still needs implementation
   Enemies AI
  
   UI
+    Oxygen System
   
-  Oxygen System
+  Sound Design
+    Music
+    Ambient Effects
+    
   
   Level Development
+    Level Design Finalized
+    Lighting of Level
+    
  
 If extra time 
   :Procedural Generation
