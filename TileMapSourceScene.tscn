@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://artAssets/Custom_tiles/tileset_cave.png" type="Texture" id=1]
+[ext_resource path="res://artAssets/lights/spot.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 160 )
@@ -20,11 +21,17 @@ extents = Vector2( 160, 160 )
 [sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( -160, -52, -128, -52, -128, -40, -108, -40, -108, -52, -68, -52, -68, -80, 0, -80, 0, -60, 80, -60, 80, -40, 92, -40, 92, -60, 140, -60, 140, -40, 160, -40, 160, 160, -160, 160 )
 
-[sub_resource type="OccluderPolygon2D" id=10]
+[sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( -160, -120, 160, -120, 160, 156, 160, 160, -160, 160 )
 
-[sub_resource type="OccluderPolygon2D" id=7]
+[sub_resource type="OccluderPolygon2D" id=8]
 polygon = PoolVector2Array( -80, 80, 0, 80, 0, 76, -24, 76, -24, 72, -32, 72, -32, 64, -40, 64, -40, 32, -52, 32, -52, -8, -60, -8, -60, -56, -64, -56, -64, 60, -68, 60, -68, 72, -80, 72 )
+
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( -132, 80, -132, 48, -120, 48, -120, 40, -112, 40, -112, 28, -100, 28, -100, 16, -92, 16, -92, 8, -80, 8, -80, 0, -72, 0, -72, -8, -40, -8, -40, -16, -32, -16, -32, -28, -20, -28, -20, -8, -32, -8, -32, 12, -40, 12, -40, 60, -52, 60, -52, 72, -60, 72, -60, 80 )
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( -36, 160, -36, 140, -28, 140, -28, 128, -12, 128, -12, 68, -12, 64, -24, 64, -24, 40, -24, 32, -32, 32, -32, 0, -32, -44, -32, -60, -32, -80, -24, -80, -24, 24, -12, 24, -12, 48, 0, 48, 0, 128, 20, 128, 32, 128, 32, 140, 40, 140, 40, 152, 52, 152, 52, 160 )
 
 [node name="Node" type="Node"]
 
@@ -101,6 +108,7 @@ shape = SubResource( 5 )
 occluder = SubResource( 6 )
 
 [node name="DarkTile" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 320, 770 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -115,15 +123,98 @@ visible = false
 shape = SubResource( 5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="DarkTile"]
-occluder = SubResource( 10 )
+occluder = SubResource( 7 )
 
 [node name="TileSpike" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 270, 770 )
+position = Vector2( 300, 710 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 800, 160, 160 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileSpike"]
-occluder = SubResource( 7 )
+occluder = SubResource( 8 )
+
+[node name="Tile_Curve" type="Sprite" parent="."]
+position = Vector2( 400, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 960, 320, 320 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tile_Curve"]
+editor/display_folded = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tile_Curve/StaticBody2D"]
+polygon = PoolVector2Array( -160, -160, 20, -160, 40, -156, 68, -140, 120, -92, 148, -40, 160, -16, 160, 160, -160, 160 )
+
+[node name="Coral_2" type="Sprite" parent="."]
+position = Vector2( 530, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 640, 320, 320 )
+
+[node name="Light2D" type="Light2D" parent="Coral_2"]
+position = Vector2( 8, 96 )
+scale = Vector2( 1.78, 2.31 )
+texture = ExtResource( 2 )
+color = Color( 0.827451, 0.482353, 0.87451, 1 )
+shadow_enabled = true
+
+[node name="GlowStick" type="Sprite" parent="."]
+position = Vector2( 470, 720 )
+rotation = 3.14159
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 480, 640, 160, 160 )
+
+[node name="Light2D" type="Light2D" parent="GlowStick"]
+modulate = Color( 0.521569, 0.768627, 0.572549, 1 )
+position = Vector2( 36, -76 )
+texture = ExtResource( 2 )
+shadow_enabled = true
+
+[node name="GlowStick2" type="Sprite" parent="."]
+position = Vector2( 610, 760 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 640, 320, 320, 160 )
+
+[node name="Light2D" type="Light2D" parent="GlowStick2"]
+modulate = Color( 0.521569, 0.768627, 0.572549, 1 )
+position = Vector2( 36, -76 )
+texture = ExtResource( 2 )
+shadow_enabled = true
+
+[node name="Coral_1" type="Sprite" parent="."]
+position = Vector2( 470, 770 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 320, 640, 160, 320 )
+
+[node name="Rock" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 400, 710 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 480, 320, 160 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Rock"]
+occluder = SubResource( 9 )
+
+[node name="TileSpike2" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 340, 690 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 160, 640, 160, 320 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileSpike2"]
+occluder = SubResource( 10 )
