@@ -16,8 +16,11 @@ Still needs implementation
  
  
   Harpoon Implementation
+     
      Reload system
+     
      Fire partcle
+     
      Animation
   
   Enemies AI
