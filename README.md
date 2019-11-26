@@ -7,12 +7,12 @@ Complete Development Deadline: Dec 2 11:59PM
   Cave Tileset
 
 In-Progress
-
+  
   Particle system \ Enemies :Luis Sandoval 11/26/19-11/28/19
 
 Still needs implementation
- 
- Paralax Background to be finalized
+  
+  Paralax Background to be finalized
  
  
   Harpoon Implementation
@@ -43,7 +43,7 @@ Still needs implementation
  
 Undecided if will be implemented:
   
-  :Procedural Generation
+  Procedural Generation
   
   :Bleed Detection
   
