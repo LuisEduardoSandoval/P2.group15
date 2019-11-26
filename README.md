@@ -23,21 +23,29 @@ Still needs implementation
   Enemies AI
  
   UI
+    
     Oxygen System
   
   Sound Design
+    
     Music
+    
     Ambient Effects
     
   
   Level Development
+    
     Level Design Finalized
+    
     Lighting of Level
     
     
  
-If extra time 
+Undecided if will be implemented:
+  
   :Procedural Generation
+  
   :Bleed Detection
+  
   :Floral Tileset
  
