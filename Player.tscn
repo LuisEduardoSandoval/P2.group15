@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://artAssets/Player/Hip.png" type="Texture" id=1]
 [ext_resource path="res://artAssets/Player/Body.png" type="Texture" id=2]
@@ -6,16 +6,43 @@
 [ext_resource path="res://artAssets/Player/HandFront.png" type="Texture" id=4]
 [ext_resource path="res://artAssets/Player/Head.png" type="Texture" id=5]
 [ext_resource path="res://artAssets/Player/light.png" type="Texture" id=6]
-[ext_resource path="res://artAssets/lights/spot.png" type="Texture" id=7]
-[ext_resource path="res://artAssets/Player/Leg_R.png" type="Texture" id=8]
-[ext_resource path="res://artAssets/Player/Shin_R.png" type="Texture" id=9]
-[ext_resource path="res://artAssets/Player/Flipper_R.png" type="Texture" id=10]
-[ext_resource path="res://artAssets/Player/ArmBack.png" type="Texture" id=11]
-[ext_resource path="res://artAssets/Player/HandBack.png" type="Texture" id=12]
-[ext_resource path="res://artAssets/Player/Leg_L.png" type="Texture" id=13]
-[ext_resource path="res://artAssets/Player/Shin_L.png" type="Texture" id=14]
-[ext_resource path="res://artAssets/Player/Flipper_L.png" type="Texture" id=15]
-[ext_resource path="res://Player_idle.tres" type="Animation" id=16]
+[ext_resource path="res://artAssets/Particles/Bubbles0.png" type="Texture" id=7]
+[ext_resource path="res://artAssets/Particles/Bubbles1.png" type="Texture" id=8]
+[ext_resource path="res://artAssets/Particles/Bubbles2.png" type="Texture" id=9]
+[ext_resource path="res://artAssets/lights/spot.png" type="Texture" id=10]
+[ext_resource path="res://artAssets/Player/Leg_R.png" type="Texture" id=11]
+[ext_resource path="res://artAssets/Player/Shin_R.png" type="Texture" id=12]
+[ext_resource path="res://artAssets/Player/Flipper_R.png" type="Texture" id=13]
+[ext_resource path="res://artAssets/Player/ArmBack.png" type="Texture" id=14]
+[ext_resource path="res://artAssets/Player/HandBack.png" type="Texture" id=15]
+[ext_resource path="res://artAssets/Player/Leg_L.png" type="Texture" id=16]
+[ext_resource path="res://artAssets/Player/Shin_L.png" type="Texture" id=17]
+[ext_resource path="res://artAssets/Player/Flipper_L.png" type="Texture" id=18]
+[ext_resource path="res://Player_idle.tres" type="Animation" id=19]
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+spread = 22.24
+gravity = Vector3( 0, -45, 0 )
+initial_velocity = 2.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.15
+
+[sub_resource type="AnimatedTexture" id=4]
+flags = 4
+frames = 6
+frame_0/texture = ExtResource( 7 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 9 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 9 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 8 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 7 )
+frame_5/delay_sec = 0.0
 
 [sub_resource type="Animation" id=1]
 resource_name = "Base"
@@ -1552,7 +1579,6 @@ __meta__ = {
 }
 
 [node name="Head" type="Sprite" parent="Hip/Torso"]
-editor/display_folded = true
 position = Vector2( 143.392, -13.9668 )
 rotation = -0.0510753
 z_index = 3
@@ -1581,17 +1607,29 @@ shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 12.0
 
+[node name="Particles2D" type="Particles2D" parent="Hip/Torso/Head"]
+use_parent_material = true
+position = Vector2( 46.5647, -35.6639 )
+z_index = -1
+amount = 3
+lifetime = 8.0
+speed_scale = 0.5
+local_coords = false
+draw_order = 1
+process_material = SubResource( 3 )
+texture = SubResource( 4 )
+
 [node name="Light2D" type="Light2D" parent="Hip/Torso"]
 position = Vector2( 176.837, -26.1287 )
 scale = Vector2( 2.13, 2.74 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 energy = 1.46
 
 [node name="Leg_R" type="Sprite" parent="Hip"]
 position = Vector2( -29.8742, 4.3979 )
 rotation = -0.563274
 z_index = 3
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( -64.386, -4.5029 )
 __meta__ = {
 "_edit_bone_": true,
@@ -1601,7 +1639,7 @@ __meta__ = {
 [node name="Shin_R" type="Sprite" parent="Hip/Leg_R"]
 position = Vector2( -101.983, -7.79059 )
 rotation = 0.736801
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 offset = Vector2( -57.3306, -2.84192 )
 __meta__ = {
 "_edit_bone_": true
@@ -1610,7 +1648,7 @@ __meta__ = {
 [node name="Flipper_R" type="Sprite" parent="Hip/Leg_R/Shin_R"]
 position = Vector2( -94.661, 1.85 )
 rotation = -0.408451
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 offset = Vector2( -69.8545, 25.5104 )
 __meta__ = {
 "_edit_bone_": true
@@ -1653,11 +1691,11 @@ __meta__ = {
 }
 
 [node name="Arm_L" type="Sprite" parent="."]
-position = Vector2( 31.9994, -1.89798 )
+position = Vector2( 31.9994, -1.89799 )
 rotation = 0.0725753
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 offset = Vector2( -40.2416, 1.87569 )
 
 [node name="Hand_L" type="Sprite" parent="."]
@@ -1665,30 +1703,30 @@ position = Vector2( -0.0277138, 0.00218106 )
 rotation = 0.0725753
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
 
 [node name="Leg_L" type="Sprite" parent="."]
 position = Vector2( -5.9997, 0.244852 )
 rotation = 0.0231725
 scale = Vector2( 0.25, 0.25 )
 z_index = -4
-texture = ExtResource( 13 )
+texture = ExtResource( 16 )
 
 [node name="Shin_L" type="Sprite" parent="."]
 position = Vector2( -28.5563, -6.20703 )
-rotation = 0.489724
+rotation = 0.489725
 scale = Vector2( 0.25, 0.25 )
 z_index = -5
-texture = ExtResource( 14 )
+texture = ExtResource( 17 )
 
 [node name="Flipper_L" type="Sprite" parent="."]
 position = Vector2( -55.8601, -10.7945 )
-rotation = 0.00821647
+rotation = 0.00821653
 scale = Vector2( 0.25, 0.25 )
 z_index = -6
-texture = ExtResource( 15 )
+texture = ExtResource( 18 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Base = SubResource( 1 )
 anims/Move = SubResource( 2 )
-anims/idle = ExtResource( 16 )
+anims/idle = ExtResource( 19 )

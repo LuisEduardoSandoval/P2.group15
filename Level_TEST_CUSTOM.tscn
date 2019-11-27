@@ -93,7 +93,7 @@ energy = 2.38
 shadow_enabled = true
 
 [node name="Light2D3" type="Light2D" parent="."]
-position = Vector2( 923, -263 )
+position = Vector2( 510, -547 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
 texture_scale = 9.56
