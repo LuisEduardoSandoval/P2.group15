@@ -1,6 +1,6 @@
 # Project2-ScubaGame
 
-Complete Development Deadline: Dec 2 11:59PM
+Complete Development Deadline: Dec 1 11:59PM
   
   Player Movement
   
