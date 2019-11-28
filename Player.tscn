@@ -20,7 +20,7 @@
 [ext_resource path="res://artAssets/Player/Flipper_L.png" type="Texture" id=18]
 [ext_resource path="res://Player_idle.tres" type="Animation" id=19]
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=5]
 flag_disable_z = true
 spread = 22.24
 gravity = Vector3( 0, -45, 0 )
@@ -29,7 +29,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 0.15
 
-[sub_resource type="AnimatedTexture" id=2]
+[sub_resource type="AnimatedTexture" id=6]
 flags = 4
 frames = 6
 frame_0/texture = ExtResource( 7 )
@@ -1616,8 +1616,8 @@ lifetime = 8.0
 speed_scale = 0.5
 local_coords = false
 draw_order = 1
-process_material = SubResource( 1 )
-texture = SubResource( 2 )
+process_material = SubResource( 5 )
+texture = SubResource( 6 )
 
 [node name="Light2D" type="Light2D" parent="Hip/Torso"]
 position = Vector2( 176.837, -26.1287 )
