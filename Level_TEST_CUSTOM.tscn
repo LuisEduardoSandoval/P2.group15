@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://artAssets/lights/spot.png" type="Texture" id=6]
 [ext_resource path="res://KinematicBody2D_angler.tscn" type="PackedScene" id=7]
 [ext_resource path="res://artAssets/Backgrounds/water.png" type="Texture" id=8]
+[ext_resource path="res://Neutral_Mob/Tuna/Tuna_Kinematic.tscn" type="PackedScene" id=9]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -98,6 +99,7 @@ shadow_enabled = true
 position = Vector2( 1934.24, 2581.44 )
 
 [node name="Water_overlay" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.862745 )
 position = Vector2( -3481.97, 0 )
@@ -105,3 +107,6 @@ scale = Vector2( 3.71901, 4.06928 )
 z_index = 21
 texture = ExtResource( 8 )
 centered = false
+
+[node name="Tuna_Kinematic" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1157.23, 941.133 )
