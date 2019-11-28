@@ -11,8 +11,6 @@ In-Progress
   Particle system \ Enemies :Luis Sandoval 11/26/19-11/28/19
 
 Still needs implementation
-  
-  Paralax Background to be finalized
  
  
   Harpoon Implementation
@@ -40,7 +38,6 @@ Still needs implementation
     
     Level Design Finalized
     
-    Lighting of Level
     
     
  
