@@ -640,3 +640,75 @@ tracks/52/keys = {
 "update": 0,
 "values": [ 0.0, 0.0, 0.0 ]
 }
+tracks/53/type = "value"
+tracks/53/path = NodePath("Hip/Torso/Arm_R:position")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 77.8491, 3.57528 ) ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Hip/Torso/Arm_R:rotation_degrees")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -98.4463 ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Hip/Torso/Arm_R/Hand_R/Harpoon_Gun:position")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -194.226, 28.6147 ) ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Hip/Torso/Arm_R/Hand_R/Harpoon_Gun:rotation_degrees")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 210.0 ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Hip/Torso/Arm_R/Hand_R:position")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -72.0984, 5.66739 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("Hip/Torso/Arm_R/Hand_R:rotation_degrees")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -76.848 ]
+}

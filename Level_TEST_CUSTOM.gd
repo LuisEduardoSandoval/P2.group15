@@ -25,8 +25,5 @@ func _process(delta):
 			$School_Fish_Kinematic.position.x += 1742
 
 
-func _ready():
-
-	print(Tuna_Position)
-	
+func _ready():	
 	pass # Replace with function body.

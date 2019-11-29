@@ -44,29 +44,30 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity)
 
 func _process(delta): 
-	Mouse_Position = get_global_mouse_position() #this must be initialized or it will crash when it calls 
+	Mouse_Position = get_local_mouse_position() #this must be initialized or it will crash when it calls 
 
 	if Input.is_action_pressed('right'): #had to check movement here as it controls rotational diretion of head
-		Mouse_Position = get_global_mouse_position() #if movement in the right direction updates head directional position
+		Mouse_Position = get_local_mouse_position() #if movement in the right direction updates head directional position
 	if Input.is_action_pressed('left'): 
-		#Mouse_Position.x = -get_local_mouse_position().x #changes head x to match movements
-		Mouse_Position.y = get_global_mouse_position().y
+		Mouse_Position.x = -get_local_mouse_position().x #changes head x to match movements
+		Mouse_Position.y = get_local_mouse_position().y
 #		if Mouse_Position.x 
 		
 	if lastXpos == true:
-		Mouse_Position.x = -get_global_mouse_position().x
-		Mouse_Position.y = get_global_mouse_position().y
+		Mouse_Position.x = -get_local_mouse_position().x
+		Mouse_Position.y = get_local_mouse_position().y
 	if lastXpos == false:
-		Mouse_Position.x = get_global_mouse_position().x
-		Mouse_Position.y = get_global_mouse_position().y
+		Mouse_Position.x = get_local_mouse_position().x
+		Mouse_Position.y = get_local_mouse_position().y
 	get_node("root/Hip/Torso/Head").rotation += Mouse_Position.angle() #changes the angle of the head to match mouse
-	get_node("root/Arm_R_end").rotation += Mouse_Position.angle() 
+	get_node("root/Hip/Torso/Arm_R/Hand_R").rotation += Mouse_Position.angle()
+	#get_node("root/Hip/Torso/Arm_R/Harpoon_Gun").rotation += Mouse_Position.angle()
 	if lastXpos == false: #if player is facing right!
-		if get_global_mouse_position().x < $root.position.x : # if players mouse is on or behind root node
+		if get_local_mouse_position().x < $root.position.x : # if players mouse is on or behind root node
 			get_node("root").set_scale(Vector2(-1,1))#models is scaled verticaly and horizontally
 			lastXpos = true
 	if lastXpos == true: 
-		if get_global_mouse_position().x > $root.position.x :
+		if get_local_mouse_position().x > $root.position.x :
 			get_node("root").set_scale(Vector2(1,1))
 			lastXpos = false
 
