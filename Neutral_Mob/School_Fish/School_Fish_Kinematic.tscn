@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://School_Fish_Kinematic.gd" type="Script" id=1]
+[ext_resource path="res://Neutral_Mob/School_Fish/School_fish.tscn" type="PackedScene" id=2]
+
+[node name="School_Fish_Kinematic" type="KinematicBody2D"]
+position = Vector2( -0.814484, 0 )
+script = ExtResource( 1 )
+
+[node name="School_fish" parent="." instance=ExtResource( 2 )]
+
+[node name="School_fish2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 22.8031, -18.528 )
+
+[node name="School_fish3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -0.12027, 21.6352 )
+
+[node name="School_fish4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 24.1666, 37.2459 )
+
+[node name="School_fish5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.2782, -0.777344 )
+
+[node name="School_fish6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 26.9945, 17.1762 )
+
+[node name="School_fish7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -11.4105, 39.9055 )
+
+[node name="School_fish8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -29.362, 22.367 )
+
+[node name="School_fish9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -30.2279, 2.18755 )
+
+[node name="School_fish10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -14.3728, -16.7686 )
+
+[node name="School_fish11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 54.1909, -13.0438 )
+
+[node name="School_fish12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 55.8544, 7.41988 )
+
+[node name="School_fish13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 55.7086, 27.0968 )
