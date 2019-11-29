@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cave_test_bkg.png-8ea955d01a7af002a7f3eb0e528207f2.stex"
+path="res://.import/Lower_jaw.png-93993871a9b2b0f7811d4515744d31c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/Backgrounds/cave_test_bkg.png"
-dest_files=[ "res://.import/cave_test_bkg.png-8ea955d01a7af002a7f3eb0e528207f2.stex" ]
+source_file="res://artAssets/Shark/Lower_jaw.png"
+dest_files=[ "res://.import/Lower_jaw.png-93993871a9b2b0f7811d4515744d31c0.stex" ]
 
 [params]
 

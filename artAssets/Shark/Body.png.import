@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cave_Back.png-6346fd460ae09f91ba5b8383cce1420a.stex"
+path="res://.import/Body.png-b14ea6c5619e5eff6a8f1db191202d14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artAssets/Backgrounds/Cave_Back.png"
-dest_files=[ "res://.import/Cave_Back.png-6346fd460ae09f91ba5b8383cce1420a.stex" ]
+source_file="res://artAssets/Shark/Body.png"
+dest_files=[ "res://.import/Body.png-b14ea6c5619e5eff6a8f1db191202d14.stex" ]
 
 [params]
 
