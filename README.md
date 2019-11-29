@@ -4,11 +4,15 @@ Complete Development Deadline: Dec 1 11:59PM
   
   Player Movement
   
+  Particle system
+  
+  Enemies
+  
   Cave Tileset
 
 In-Progress
   
-  Particle system \ Enemies :Luis Sandoval 11/26/19-11/28/19
+
 
 Still needs implementation
  
@@ -23,7 +27,7 @@ Still needs implementation
   
   Enemies AI
  
-  UI
+  UI Luis Sandoval 11/29/19-11/30/19
     
     Oxygen System
   
