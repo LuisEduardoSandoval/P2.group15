@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Neutral_Mob/Tuna/Tuna_Kinematic.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Neutral_Mob/School_Fish/School_Fish_Kinematic.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Agressive_Mob/Shark_Kinematic.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Projectile_kinematic.gd" type="Script" id=12]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -141,3 +142,6 @@ z_index = -29
 
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1336.92, 1277.61 )
+
+[node name="Projectile_kinematic" type="KinematicBody2D" parent="."]
+script = ExtResource( 12 )
