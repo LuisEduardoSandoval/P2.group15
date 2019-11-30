@@ -7,8 +7,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 46.795 )
 
-[node name="Harpoon" type="KinematicBody2D"]
+[node name="Harpoon" type="RigidBody2D"]
 rotation = -0.0174533
+linear_velocity = Vector2( 100, 0 )
 script = ExtResource( 1 )
 
 [node name="Harpoon" type="Sprite" parent="."]
@@ -16,7 +17,7 @@ position = Vector2( 11.3619, 8.68417 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3.69311, 0.242933 )
+position = Vector2( -2.15656, 0.269754 )
 rotation = -1.5708
 shape = SubResource( 1 )
 script = ExtResource( 3 )

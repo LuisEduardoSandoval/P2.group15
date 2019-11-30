@@ -36,6 +36,10 @@ func get_input():
 	if (velocity.x == 0):
 		get_node("root/AnimationPlayer").play("idle")
 	velocity = velocity.normalized()* speed
+	
+
+            
+            
 
 
 func _physics_process(delta: float) -> void:
