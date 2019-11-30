@@ -983,6 +983,7 @@ tracks/29/keys = {
 [node name="Angler" type="Sprite"]
 
 [node name="Head_Body" type="Sprite" parent="."]
+rotation = 0.177179
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -990,7 +991,8 @@ __meta__ = {
 }
 
 [node name="Jaw_Lower" type="Sprite" parent="Head_Body"]
-position = Vector2( -15.003, 44.9237 )
+position = Vector2( -15.003, 43.2766 )
+rotation = 0.0678409
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_bone_": true,
@@ -998,7 +1000,8 @@ __meta__ = {
 }
 
 [node name="Jaw" type="Sprite" parent="Head_Body/Jaw_Lower"]
-position = Vector2( -34.8755, -14.9273 )
+position = Vector2( -31.7687, -16.5053 )
+rotation = 0.168499
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_bone_": true
@@ -1042,10 +1045,13 @@ shadow_enabled = true
 shadow_color = Color( 0.580392, 0.117647, 0.592157, 0 )
 
 [node name="Fin_front" type="Sprite" parent="Head_Body"]
+position = Vector2( -0.848339, 0 )
+scale = Vector2( 0.809566, 1 )
 texture = ExtResource( 7 )
 
 [node name="Tail" type="Sprite" parent="Head_Body"]
-position = Vector2( 65.0926, -5.07222 )
+position = Vector2( 52.1737, -5.00313 )
+scale = Vector2( 0.357286, 1 )
 texture = ExtResource( 8 )
 __meta__ = {
 "_edit_bone_": true
