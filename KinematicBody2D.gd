@@ -90,30 +90,30 @@ func _process(delta):
 		if get_local_mouse_position().x > $root.position.x :
 			get_node("root").set_scale(Vector2(1,1))
 			lastXpos = false
-	if(shooting && waited > harpoon_delay):
-		fire_once()
-		waited = 0
-	elif(waited <= harpoon_delay):
-		waited += delta
+	#if(shooting && waited > harpoon_delay):
+		#fire_once()
+		#waited = 0
+	#elif(waited <= harpoon_delay):
+		#waited += delta
 	pass
 
-func fire_once():
-	shoot()
-	shooting = false
+#func fire_once():
+	#shoot()
+	#shooting = false
 
-func _input(event):
-	if(event.is_action_pressed("click")):
+#func _input(event):
+	#if(event.is_action_pressed("click")):
 		
-		shooting = true
-	elif(event.is_action_released("click")):
-		shooting = false
+		#shooting = true
+	#elif(event.is_action_released("click")):
+		#shooting = false
 
-func shoot():
-	var harpoon = Harpoon.instance()
-	harpoon.instance()
-	add_child(harpoon)
-	harpoon.shoot(directional_force, harpoon_gravity)
-	get_parent().add_child(harpoon)
+#func shoot():
+	#var harpoon = Harpoon.instance()
+	#harpoon.instance()
+	#add_child(harpoon)
+	#harpoon.shoot(directional_force, harpoon_gravity)
+	#get_parent().add_child(harpoon)
  
 
 func _ready():

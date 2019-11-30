@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Neutral_Mob/School_Fish/School_Fish_Kinematic.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Agressive_Mob/Shark_Kinematic.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Harpoon.tscn" type="PackedScene" id=12]
+[ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=13]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -143,3 +144,8 @@ z_index = -29
 position = Vector2( 1336.92, 1277.61 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 12 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource( 13 )]
+visible = false
