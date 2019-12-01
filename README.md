@@ -6,6 +6,16 @@ Complete Development Deadline: Dec 1 11:59PM
   
   Particle system
   
+   UI
+   
+  Oxygen System
+  
+  Sound Design
+    
+    Music
+    
+    Ambient Effects
+  
   Enemies
   
   Cave Tileset
@@ -23,22 +33,15 @@ Still needs implementation
      
      Fire partcle
      
-     Animation
   
   Enemies AI
- 
-  UI Luis Sandoval 11/29/19-11/30/19
-    
-    Oxygen System
-  
-  Sound Design
-    
-    Music
-    
-    Ambient Effects
     
   
-  Level Development
+  
+
+    
+  
+  Level Development Luis Sandoval Dec1
     
     Level Design Finalized
     
