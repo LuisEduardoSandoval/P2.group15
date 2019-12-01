@@ -148,8 +148,44 @@ centered = false
 [node name="Water_overlaydeeper" type="Sprite" parent="Water_overlay"]
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.0196078 )
-position = Vector2( 0, 528.471 )
-scale = Vector2( 1, 0.41281 )
+position = Vector2( 0, 278.896 )
+scale = Vector2( 1, 0.690116 )
+z_index = 21
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Water_overlaydeeper2" type="Sprite" parent="Water_overlay/Water_overlaydeeper"]
+modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
+self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.0196078 )
+position = Vector2( 0, 131.687 )
+scale = Vector2( 1, 0.853682 )
+z_index = 21
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Water_overlaydeeper4" type="Sprite" parent="Water_overlay/Water_overlaydeeper/Water_overlaydeeper2"]
+modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
+self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.0196078 )
+position = Vector2( 0, 305.276 )
+scale = Vector2( 1, 0.660804 )
+z_index = 21
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Water_overlaydeeper3" type="Sprite" parent="Water_overlay/Water_overlaydeeper/Water_overlaydeeper2/Water_overlaydeeper4"]
+modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
+self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.105882 )
+position = Vector2( 0, -273.852 )
+scale = Vector2( 1, 1.30428 )
+z_index = 21
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Water_overlaydeeper5" type="Sprite" parent="Water_overlay/Water_overlaydeeper/Water_overlaydeeper2/Water_overlaydeeper4/Water_overlaydeeper3"]
+modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
+self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.164706 )
+position = Vector2( 0, 370.633 )
+scale = Vector2( 1, 0.588186 )
 z_index = 21
 texture = ExtResource( 11 )
 centered = false
@@ -177,5 +213,6 @@ stream = ExtResource( 17 )
 volume_db = -20.0
 autoplay = true
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
+[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
 
 [editable path="KinematicBody2D"]

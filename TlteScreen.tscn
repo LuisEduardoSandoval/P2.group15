@@ -58,6 +58,7 @@ position = Vector2( 636.156, 451.715 )
 z_index = 7
 
 [node name="Area2D" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 526.025, 478.204 )
