@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/179927__yosarrian__underwater.wav-27f6baf956e214d85e957fd5dcf6d4fd.sample"
+
+[deps]
+
+source_file="res://Sound/179927__yosarrian__underwater.wav"
+dest_files=[ "res://.import/179927__yosarrian__underwater.wav-27f6baf956e214d85e957fd5dcf6d4fd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

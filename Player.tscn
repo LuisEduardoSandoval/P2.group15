@@ -1519,13 +1519,12 @@ tracks/58/keys = {
 position = Vector2( 0.0118866, -0.0077858 )
 
 [node name="Hip" type="Sprite" parent="."]
-position = Vector2( 7.34659, 0.608972 )
+position = Vector2( 7.43127, 0.268585 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 
 [node name="Torso" type="Sprite" parent="Hip"]
 position = Vector2( -8.29787, 3.21237 )
-rotation = 0.0508027
 texture = ExtResource( 2 )
 offset = Vector2( 42.102, -13.39 )
 
@@ -1551,7 +1550,6 @@ __meta__ = {
 
 [node name="Head" type="Sprite" parent="Hip/Torso"]
 position = Vector2( 143.392, -13.9668 )
-rotation = -0.0357527
 z_index = 3
 texture = ExtResource( 3 )
 offset = Vector2( 37.922, 0.192902 )
@@ -1639,7 +1637,7 @@ energy = 1.46
 [node name="Leg_R" type="Sprite" parent="Hip"]
 editor/display_folded = true
 position = Vector2( -29.8742, 4.3979 )
-rotation = -0.0677625
+rotation = -0.0242658
 z_index = 3
 texture = ExtResource( 13 )
 offset = Vector2( -64.386, -4.5029 )
@@ -1650,7 +1648,6 @@ __meta__ = {
 
 [node name="Shin_R" type="Sprite" parent="Hip/Leg_R"]
 position = Vector2( -101.983, -7.79059 )
-rotation = -0.0139961
 texture = ExtResource( 14 )
 offset = Vector2( -57.3306, -2.84192 )
 __meta__ = {
@@ -1658,8 +1655,7 @@ __meta__ = {
 }
 
 [node name="Flipper_R" type="Sprite" parent="Hip/Leg_R/Shin_R"]
-position = Vector2( -95.3992, 1.84996 )
-rotation = 0.0299271
+position = Vector2( -97.1215, 1.84987 )
 texture = ExtResource( 15 )
 offset = Vector2( -69.8545, 25.5104 )
 __meta__ = {
@@ -1674,8 +1670,7 @@ __meta__ = {
 
 [node name="Remote_Leg_L" type="RemoteTransform2D" parent="Hip"]
 editor/display_folded = true
-position = Vector2( -54.252, -18.686 )
-rotation = -0.0426175
+position = Vector2( -54.84, -20.52 )
 remote_path = NodePath("../../Leg_L")
 __meta__ = {
 "_edit_bone_": true,
@@ -1683,16 +1678,15 @@ __meta__ = {
 }
 
 [node name="Remote_Shin_L" type="RemoteTransform2D" parent="Hip/Remote_Leg_L"]
-position = Vector2( -91.096, -5.369 )
-rotation = 0.17064
+position = Vector2( -95.03, 0 )
 remote_path = NodePath("../../../Shin_L")
 __meta__ = {
 "_edit_bone_": true
 }
 
 [node name="Remote_Flipper_L" type="RemoteTransform2D" parent="Hip/Remote_Leg_L/Remote_Shin_L"]
-position = Vector2( -107.741, 18.848 )
-rotation = 0.13288
+position = Vector2( -112.5, -1.14 )
+rotation = 0.023767
 remote_path = NodePath("../../../../Flipper_L")
 __meta__ = {
 "_edit_bone_": true
@@ -1704,37 +1698,33 @@ __meta__ = {
 }
 
 [node name="Arm_L" type="Sprite" parent="."]
-position = Vector2( 31.9541, -2.62571 )
-rotation = 0.0508027
+position = Vector2( 31.7993, -4.31582 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 16 )
 offset = Vector2( -40.2416, 1.87569 )
 
 [node name="Hand_L" type="Sprite" parent="."]
-position = Vector2( -0.0240479, -0.0287385 )
-rotation = 0.0508027
+position = Vector2( -0.00569916, -0.0983224 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -1
 texture = ExtResource( 17 )
 
 [node name="Leg_L" type="Sprite" parent="."]
-position = Vector2( -6.21641, -4.06253 )
-rotation = -0.0426175
+position = Vector2( -6.27873, -4.86141 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -4
 texture = ExtResource( 18 )
 
 [node name="Shin_L" type="Sprite" parent="."]
-position = Vector2( -29.0269, -4.43328 )
-rotation = 0.128023
+position = Vector2( -30.0362, -4.86141 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -5
 texture = ExtResource( 19 )
 
 [node name="Flipper_L" type="Sprite" parent="."]
-position = Vector2( -56.3433, -3.19875 )
-rotation = 0.260903
+position = Vector2( -58.1612, -5.14641 )
+rotation = 0.023767
 scale = Vector2( 0.25, 0.25 )
 z_index = -6
 texture = ExtResource( 20 )

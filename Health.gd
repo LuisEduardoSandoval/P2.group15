@@ -4,7 +4,7 @@ signal health_changed(health)
 signal health_depleted
 
 var health = 0
-const TIMER_LIMIT = 2.0
+const TIMER_LIMIT = 2
 var timer = 0.0
 
 export(int) var max_health = 100
@@ -28,8 +28,4 @@ func _process(delta):
 		timer = 0.0
 		take_damage(1)
 	if health == 0:
-		get_tree().quit()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		get_tree().change_scene("TlteScreen.tscn")
