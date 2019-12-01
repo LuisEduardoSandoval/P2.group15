@@ -33,4 +33,9 @@ func _process(delta):
 
 
 func _ready():	
+	var player = AudioStreamPlayer.new()
+	self.add_child(player) 
+	player.stream = load("res://Sound/sonar-ping.wav")
+	player.set_volume_db(-18)
+	player.play()
 	pass # Replace with function body.

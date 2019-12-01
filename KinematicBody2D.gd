@@ -5,20 +5,22 @@ export var speed = Vector2(200,200) #character move speed
 var Mouse_Position 
 var lastXpos = false #last Direction on axis so head movement is correct false means looking right
 
-
+var harpoon = preload("res://Harpoon.tscn")
+var can_fire = true
+var rate_of_fire = .5
 
 
 export var gravity: = 30.0
-export (float) var harpoon_delay = 1
-var waited = 0
-export (PackedScene) var Harpoon
-export (NodePath) var harpoon_spawn_path
-export (int) var  harpoon_gravity = 0
-export (int) var harpoon_speed = 8
-export (float) var harpoon_angle = 0 setget set_harpoon_angle
-var directional_force = Vector2()
-var shooting =  false
-onready var harpoon_spawn = get_node(harpoon_spawn_path)
+#export (float) var harpoon_delay = 1
+#var waited = 0
+#export (PackedScene) var Harpoon
+#export (NodePath) var harpoon_spawn_path
+#export (int) var  harpoon_gravity = 0
+#export (int) var harpoon_speed = 8
+#export (float) var harpoon_angle = 0 setget set_harpoon_angle
+#var directional_force = Vector2()
+#var shooting =  false
+#onready var harpoon_spawn = get_node(harpoon_spawn_path)
 
 
 var velocity: = Vector2.ZERO
@@ -49,11 +51,11 @@ func get_input():
 	velocity = velocity.normalized()* speed
 	
 
-func set_harpoon_angle(value):  
-	harpoon_angle = clamp(value, 0, 359)          
+#func set_harpoon_angle(value):  
+#	harpoon_angle = clamp(value, 0, 359)          
 
-func update_directional_force():
-	directional_force = Vector2(cos(harpoon_angle*(PI/180)), sin(harpoon_angle*(PI/180))) * harpoon_speed
+#func update_directional_force():
+#	directional_force = Vector2(cos(harpoon_angle*(PI/180)), sin(harpoon_angle*(PI/180))) * harpoon_speed
 
 
 func _physics_process(delta: float) -> void:
@@ -65,7 +67,9 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta): 
 	Mouse_Position = get_local_mouse_position() #this must be initialized or it will crash when it calls 
-
+	
+	SkillLoop()
+	
 	if Input.is_action_pressed('right'): #had to check movement here as it controls rotational diretion of head
 		Mouse_Position = get_local_mouse_position() #if movement in the right direction updates head directional position
 	if Input.is_action_pressed('left'): 
@@ -97,6 +101,16 @@ func _process(delta):
 		#waited += delta
 	pass
 
+
+func SkillLoop():
+	if Input.is_action_pressed("click") and can_fire == true:
+		can_fire = false
+		var harpoon_instance = harpoon.instance()
+		harpoon_instance.position = get_global_position()
+		harpoon_instance.rotation = get_angle_to(get_global_mouse_position())
+		get_parent().add_child(harpoon_instance)
+		yield(get_tree().create_timer(rate_of_fire), "timeout")
+		can_fire = true
 #func fire_once():
 	#shoot()
 	#shooting = false
@@ -118,7 +132,7 @@ func _process(delta):
 
 func _ready():
 	get_node("root/AnimationPlayer").play("idle")
-	update_directional_force()
+	#update_directional_force()
 	set_process_input(true)
 	set_process(true)
 	pass

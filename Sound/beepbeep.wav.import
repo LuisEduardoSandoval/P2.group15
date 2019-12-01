@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/beepbeep.wav-81e1a12db5f19d2fa9b680e29d7bd03e.sample"
+
+[deps]
+
+source_file="res://Sound/beepbeep.wav"
+dest_files=[ "res://.import/beepbeep.wav-81e1a12db5f19d2fa9b680e29d7bd03e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

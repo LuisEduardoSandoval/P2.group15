@@ -50,6 +50,7 @@ layer = 2
 [node name="KinematicBody2D" parent="." groups=[
 "actors",
 ] instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 475, 1226 )
 z_index = 1
 
