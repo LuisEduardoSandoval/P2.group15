@@ -9,6 +9,17 @@ var lastXpos = false #last Direction on axis so head movement is correct false m
 
 
 export var gravity: = 30.0
+export (float) var harpoon_delay = 1
+var waited = 0
+export (PackedScene) var Harpoon
+export (NodePath) var harpoon_spawn_path
+export (int) var  harpoon_gravity = 0
+export (int) var harpoon_speed = 8
+export (float) var harpoon_angle = 0 setget set_harpoon_angle
+var directional_force = Vector2()
+var shooting =  false
+onready var harpoon_spawn = get_node(harpoon_spawn_path)
+
 
 var velocity: = Vector2.ZERO
 
@@ -38,8 +49,11 @@ func get_input():
 	velocity = velocity.normalized()* speed
 	
 
-            
-            
+func set_harpoon_angle(value):  
+	harpoon_angle = clamp(value, 0, 359)          
+
+func update_directional_force():
+	directional_force = Vector2(cos(harpoon_angle*(PI/180)), sin(harpoon_angle*(PI/180))) * harpoon_speed
 
 
 func _physics_process(delta: float) -> void:
@@ -47,6 +61,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(velocity)
 	get_input()
 	velocity = move_and_slide(velocity)
+	
 
 func _process(delta): 
 	Mouse_Position = get_local_mouse_position() #this must be initialized or it will crash when it calls 
@@ -75,16 +90,37 @@ func _process(delta):
 		if get_local_mouse_position().x > $root.position.x :
 			get_node("root").set_scale(Vector2(1,1))
 			lastXpos = false
-
+	if(shooting && waited > harpoon_delay):
+		fire_once()
+		waited = 0
+	elif(waited <= harpoon_delay):
+		waited += delta
 	pass
-	
 
+func fire_once():
+	shoot()
+	shooting = false
 
+func _input(event):
+	if(event.is_action_pressed("click")):
+		
+		shooting = true
+	elif(event.is_action_released("click")):
+		shooting = false
 
+func shoot():
+	var harpoon = Harpoon.instance()
+	harpoon.instance()
+	add_child(harpoon)
+	harpoon.shoot(directional_force, harpoon_gravity)
+	get_parent().add_child(harpoon)
  
 
 func _ready():
 	get_node("root/AnimationPlayer").play("idle")
+	update_directional_force()
+	set_process_input(true)
+	set_process(true)
 	pass
 
 	

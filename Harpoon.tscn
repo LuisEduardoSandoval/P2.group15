@@ -7,10 +7,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 46.795 )
 
-[node name="Harpoon" type="RigidBody2D"]
+[node name="Harpoon" type="KinematicBody2D"]
 rotation = -0.0174533
-linear_velocity = Vector2( 100, 0 )
 script = ExtResource( 1 )
+_gravity = 1.0
 
 [node name="Harpoon" type="Sprite" parent="."]
 position = Vector2( 11.3619, 8.68417 )

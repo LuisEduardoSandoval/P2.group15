@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Harpoon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 4.04765
@@ -10,6 +11,10 @@ height = 192.597
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 470.702, 247.581 )
 script = ExtResource( 1 )
+Harpoon = ExtResource( 2 )
+harpoon_spawn_path = NodePath("harpoon_spawn")
+harpoon_gravity = 1
+harpoon_angle = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0272369, -0.0803833 )
@@ -17,4 +22,7 @@ rotation = 1.5708
 scale = Vector2( 3.69057, 0.538223 )
 shape = SubResource( 1 )
 
-[node name="root" parent="." instance=ExtResource( 2 )]
+[node name="root" parent="." instance=ExtResource( 3 )]
+
+[node name="harpoon_spawn" type="Position2D" parent="."]
+position = Vector2( 119.419, 14.0493 )
