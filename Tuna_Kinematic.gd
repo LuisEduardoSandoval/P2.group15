@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-onready var Tuna_position = $Tuna.position.x #tunas position on start
+onready var Tuna_Position = $Tuna.position.x #tunas position on start
 
 
 func _physics_process(delta):
