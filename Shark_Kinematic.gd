@@ -39,8 +39,8 @@ func _physics_process(delta):
 		
 	if $Shark/hor.is_colliding() == true:
 		if $Shark/hor.get_collider():
-			$KinematicBody2D
-			$KinematicBody2D/Health.Health -=20
+			get_parent().get_node("KinematicBody2D/Health.health").health -= 20
+			
 		direction_x = direction_x * -1
 		get_node("Shark").set_scale(Vector2(direction_x,direction_y))
 		

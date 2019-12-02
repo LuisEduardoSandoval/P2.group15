@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://Sound/179927__yosarrian__underwater.wav" type="AudioStream" id=16]
 [ext_resource path="res://Sound/Music.wav" type="AudioStream" id=17]
 [ext_resource path="res://Win.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Lose.tscn" type="PackedScene" id=19]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -258,11 +257,12 @@ z_index = -29
 position = Vector2( 2091, 6702 )
 z_index = -29
 
+[node name="Shark_Kinematic2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1071.24, 1240.76 )
+scale = Vector2( 1, 1 )
+
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3675, 6527.99 )
-
-[node name="Shark_Kinematic" parent="Shark_Kinematic" instance=ExtResource( 14 )]
-position = Vector2( 2603.76, -5287.23 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 15 )]
 
@@ -279,11 +279,6 @@ autoplay = true
 [node name="Win" type="CanvasLayer" parent="."]
 
 [node name="Win" parent="Win" instance=ExtResource( 18 )]
-visible = false
-
-[node name="Lose" type="CanvasLayer" parent="."]
-
-[node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]

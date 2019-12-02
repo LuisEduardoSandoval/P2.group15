@@ -4,9 +4,9 @@ extends Node
 onready var Tuna_Position = $Tuna_Kinematic.position.x
 
 
-=======
+
 var n = 0
->>>>>>> 704b321ed5fb8ee91a28a947a7fef52d6e67143e
+
 # Called when the node enters the scene tree for the first time.
 
 
