@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Interface/Bar.gd" type="Script" id=1]
 [ext_resource path="res://Interface/Counter.tscn" type="PackedScene" id=2]
@@ -6,62 +6,6 @@
 [ext_resource path="res://Interface/Oxygen.png" type="Texture" id=4]
 [ext_resource path="res://Interface/Oxygen_bar.png" type="Texture" id=5]
 [ext_resource path="res://Interface/Fill.png" type="Texture" id=6]
-
-[sub_resource type="Animation" id=1]
-resource_name = "Base"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Counter/Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Counter/Label:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 116.185, 6.5481 ) ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "Shake"
-length = 0.2
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Counter/Label:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Counter/Label:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 116.185, 6.5481 ) ]
-}
 
 [node name="Bar" type="HBoxContainer"]
 margin_right = 40.0
@@ -105,11 +49,5 @@ value = 90.0
 rounded = true
 texture_under = ExtResource( 5 )
 texture_progress = ExtResource( 6 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Base = SubResource( 1 )
-anims/Shake = SubResource( 2 )
-
-[node name="Tween" type="Tween" parent="."]
 
 [editable path="Counter"]
