@@ -17,6 +17,11 @@ script = ExtResource( 1 )
 position = Vector2( 11.3619, 8.68417 )
 texture = ExtResource( 2 )
 
+[node name="kill" type="RayCast2D" parent="Harpoon"]
+position = Vector2( -20.5758, -7.89792 )
+rotation = -1.5708
+enabled = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.15656, 0.269754 )
 rotation = -1.5708
