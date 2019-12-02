@@ -164,7 +164,6 @@ collision_layer = 3075
 collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
-editor/display_folded = true
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
 position = Vector2( -5521.08, -929.903 )
@@ -185,11 +184,12 @@ centered = false
 [node name="Water_overlaydeeper2" type="Sprite" parent="Water_overlay/Water_overlaydeeper"]
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.0196078 )
-position = Vector2( 0, 131.687 )
+position = Vector2( 847.253, 144.768 )
 scale = Vector2( 1, 0.853682 )
 z_index = 21
 texture = ExtResource( 11 )
 centered = false
+offset = Vector2( -847.253, -15.3227 )
 
 [node name="Water_overlaydeeper4" type="Sprite" parent="Water_overlay/Water_overlaydeeper/Water_overlaydeeper2"]
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
