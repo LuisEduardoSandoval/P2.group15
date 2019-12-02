@@ -3,8 +3,6 @@ extends KinematicBody2D
 var speed = 90
 const gravity = 0
 
-var health = 2
-
 var velocity = Vector2()
 var direction_x = 1
 var direction_y = 1
@@ -30,9 +28,6 @@ func _physics_process(delta):
 	velocity.y += gravity
 	velocity = move_and_slide(velocity)
 	
-	if health == 0:
-		get_parent().remove_child(self)
-	
 
 #	if is_on_wall():
 #		direction_x = direction_x * -1
@@ -43,19 +38,12 @@ func _physics_process(delta):
 #		get_node("Shark").set_scale(Vector2(direction_x,direction_y))
 		
 	if $Shark/hor.is_colliding() == true:
-		if $Shark/hor.get_collider():
-			get_parent().get_parent().get_node("Shark_KinematicCollisionShape2D").take_damage(20)
+#		if $Shark/hor.get_collider():
+#			get_parent().get_node("KinematicBody2D/Health.health").health -= 20
 			
 		direction_x = direction_x * -1
 		get_node("Shark").set_scale(Vector2(direction_x,direction_y))
 		
-	
-		
-		
-#func damage(health):
-#	health = health - 1
-#	if health == 0:
-#		get_node("Shark").set_scale(Vector2(10,10))
 	
 	
 

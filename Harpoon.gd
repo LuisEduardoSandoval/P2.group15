@@ -19,8 +19,8 @@ func _ready():
 #	_movement.y += delta * _gravity
 #	mo(_movement)
 
-func _physics_process(delta):
-	if $Harpoon/kill.is_colliding() == true:
-		if $Harpoon/kill.get_collider():
-			get_parent().get_node("Shark_Kinematic3").health -= 1
+#func _physics_process(delta):
+#	if $Harpoon/kill.is_colliding() == true:
+#		if $Harpoon/kill.get_collider():
+#			get_parent().get_node("Shark_Kinematic").health -= 1
 	
