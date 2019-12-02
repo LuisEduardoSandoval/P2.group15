@@ -33,10 +33,10 @@ func _process(delta):
 	if $KinematicBody2D.position.y < 340:
 		$Win/Win.set_visible(true)
 		finish = true
-	if $Health.health == 2:
+	if $KinematicBody2D/Health.health == 2:
 		$Lose/Lose.set_visible(true)
 		var time = 0.0
-	if $Health.health == 0:
+	if $KinematicBody2D/Health.health == 0:
 		get_tree().change_scene("TlteScreen.tscn")
 		
 		

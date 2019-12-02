@@ -22,5 +22,5 @@ func _ready():
 func _physics_process(delta):
 	if $Harpoon/kill.is_colliding() == true:
 		if $Harpoon/kill.get_collider():
-			get_parent().get_nodde("Shark_Kinematic").health -= 1
+			get_parent().get_node("Shark_Kinematic3").health -= 1
 	

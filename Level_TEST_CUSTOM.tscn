@@ -51,7 +51,6 @@ layer = 2
 [node name="KinematicBody2D" parent="." groups=[
 "actors",
 ] instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 475, 1226 )
 z_index = 1
 collision_layer = 3
@@ -162,6 +161,7 @@ collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
 editor/display_folded = true
+visible = false
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
 position = Vector2( -5521.08, -929.903 )
@@ -264,10 +264,16 @@ z_index = -29
 position = Vector2( -840, 5050 )
 scale = Vector2( 1, 1 )
 
+[node name="Shark_Kinematic3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1210.53, 1244.69 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 14 )]
 position = Vector2( 3675, 6527.99 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 15 )]
+position = Vector2( 15.1791, 197.329 )
 
 [node name="AudioStreamPlayerUnderwater" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
@@ -290,7 +296,7 @@ editor/display_folded = true
 
 [node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
-[connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
+[connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 
 [editable path="KinematicBody2D"]
