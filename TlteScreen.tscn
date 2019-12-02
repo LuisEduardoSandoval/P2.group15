@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Node.gd" type="Script" id=1]
 [ext_resource path="res://Interface/TitleScreen.png" type="Texture" id=2]
 [ext_resource path="res://Interface/TitleName.png" type="Texture" id=3]
 [ext_resource path="res://Interface/TitlePlay.png" type="Texture" id=4]
-[ext_resource path="res://Interface/TitleExit.png" type="Texture" id=5]
-[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interface/TitlePlay_hovered.png" type="Texture" id=5]
+[ext_resource path="res://Interface/TitleExit.png" type="Texture" id=6]
+[ext_resource path="res://Interface/TitleExit_hovered.png" type="Texture" id=7]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 540.251 )
@@ -46,14 +48,16 @@ margin_bottom = 623.0
 margin_right = 683.0
 margin_bottom = 201.0
 texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 205.0
 margin_right = 683.0
 margin_bottom = 406.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 6 )]
+[node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 636.156, 451.715 )
 z_index = 7
 

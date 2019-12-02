@@ -27,5 +27,5 @@ func _process(delta):
 	if timer > TIMER_LIMIT:
 		timer = 0.0
 		take_damage(1)
-	if health == 0:
-		get_tree().change_scene("TlteScreen.tscn")
+#	if health == 0:
+#		get_tree().change_scene("TlteScreen.tscn")

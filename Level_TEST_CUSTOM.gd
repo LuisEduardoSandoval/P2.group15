@@ -5,6 +5,9 @@ onready var Tuna_Position = $Tuna_Kinematic.position.x
 
 
 
+=======
+var n = 0
+>>>>>>> 704b321ed5fb8ee91a28a947a7fef52d6e67143e
 # Called when the node enters the scene tree for the first time.
 
 
@@ -19,7 +22,9 @@ func _process(delta):
 	timer += delta
 	if timer > TIMER_LIMIT:
 		timer = 0.0
-		print("fps: " + str(Engine.get_frames_per_second())) #prints something every 2 seconds calling timer limit
+	
+		#print("fps: " + str(Engine.get_frames_per_second())) #prints something every 2 seconds calling timer limit
+		
 		if finish == true:
 			get_tree().change_scene("TlteScreen.tscn")
 
@@ -29,6 +34,15 @@ func _process(delta):
 	if $KinematicBody2D.position.y < 340:
 		$Win/Win.set_visible(true)
 		finish = true
+	if $KinematicBody2D/Health.health == 2:
+		$Lose/Lose.set_visible(true)
+		var time = 0.0
+	if $KinematicBody2D/Health.health == 0:
+		get_tree().change_scene("TlteScreen.tscn")
+		
+		
+		
+		
 		
 		
 

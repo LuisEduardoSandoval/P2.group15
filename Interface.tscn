@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Interface.gd" type="Script" id=1]
 [ext_resource path="res://Interface/Bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interface/Harpoon_Interface.tscn" type="PackedScene" id=3]
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -15,6 +16,22 @@ margin_right = 419.0
 margin_bottom = 102.0
 
 [node name="Bar" parent="Bars" instance=ExtResource( 2 )]
+editor/display_folded = true
 margin_right = 368.0
 margin_bottom = 52.0
+
+[node name="Label" parent="Bars/Bar/Counter" index="0"]
+margin_right = -15.8172
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+
+[node name="Harpoon" parent="Bars" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 56.0
+margin_right = 368.0
+margin_bottom = 56.0
 [connection signal="health_changed" from="." to="Bars/Bar" method="_on_Interface_health_changed"]
+
+[editable path="Bars/Bar"]
+
+[editable path="Bars/Bar/Counter"]
