@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sound/179927__yosarrian__underwater.wav" type="AudioStream" id=16]
 [ext_resource path="res://Sound/Music.wav" type="AudioStream" id=17]
 [ext_resource path="res://Win.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Lose.tscn" type="PackedScene" id=19]
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -52,7 +53,8 @@ script = ExtResource( 5 )
 
 [node name="KinematicBody2D" parent="." groups=[
 "actors",
-] instance=ExtResource( 6 )]
+] instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 475, 1226 )
 z_index = 1
 collision_layer = 3
@@ -159,6 +161,7 @@ collision_layer = 3075
 collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
+editor/display_folded = true
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
 position = Vector2( -5521.08, -929.903 )
@@ -257,9 +260,15 @@ z_index = -29
 position = Vector2( 2091, 6702 )
 z_index = -29
 
+<<<<<<< HEAD
 [node name="Harpoon" parent="." instance=ExtResource( 14 )]
 contacts_reported = 1
 contact_monitor = true
+=======
+[node name="Shark_Kinematic2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -840, 5050 )
+scale = Vector2( 1, 1 )
+>>>>>>> 07432dabb1bfff452b9b251ef6af5132ac871f17
 
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3675, 6527.99 )
@@ -281,10 +290,22 @@ volume_db = -20.0
 autoplay = true
 
 [node name="Win" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Win" parent="Win" instance=ExtResource( 18 )]
 visible = false
+<<<<<<< HEAD
 [connection signal="health_changed" from="Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 [connection signal="health_changed" from="Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
+=======
+
+[node name="Lose" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="Lose" parent="Lose" instance=ExtResource( 19 )]
+visible = false
+[connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
+[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
+>>>>>>> 07432dabb1bfff452b9b251ef6af5132ac871f17
 
 [editable path="KinematicBody2D"]
