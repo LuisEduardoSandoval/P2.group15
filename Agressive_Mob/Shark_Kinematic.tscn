@@ -4,8 +4,8 @@
 [ext_resource path="res://Agressive_Mob/Shark.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 12.9142
-height = 60.411
+radius = 13.8998
+height = 170.136
 
 [node name="Shark_Kinematic" type="KinematicBody2D"]
 scale = Vector2( -1, 1 )
@@ -16,6 +16,6 @@ script = ExtResource( 1 )
 [node name="Shark" parent="." instance=ExtResource( 2 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 55.3765, 5.1513 )
+position = Vector2( -2.8911, 2.77344 )
 rotation = 1.5708
 shape = SubResource( 1 )

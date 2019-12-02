@@ -1634,8 +1634,11 @@ texture_scale = 4.88
 color = Color( 0.0196078, 0.419608, 0.0941176, 1 )
 energy = 1.46
 
-[node name="harpoon_spawn" type="Position2D" parent="Hip/Torso/Arm_R/Hand_R/Harpoon_Gun"]
-position = Vector2( 111.064, -122.758 )
+[node name="TurnAxis" type="Position2D" parent="Hip/Torso/Arm_R/Hand_R/Harpoon_Gun"]
+position = Vector2( -105.873, 56.0714 )
+
+[node name="CastPoint" type="Position2D" parent="Hip/Torso/Arm_R/Hand_R/Harpoon_Gun/TurnAxis"]
+position = Vector2( 219.909, -180.888 )
 
 [node name="Leg_R" type="Sprite" parent="Hip"]
 editor/display_folded = true

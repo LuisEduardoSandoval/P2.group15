@@ -116,7 +116,7 @@ position = Vector2( 320, 770 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 320, 0, 320, 320 )
+region_rect = Rect2( 1507.41, -111.253, 19.9724, 299.588 )
 
 [node name="TileSpike" type="Sprite" parent="."]
 position = Vector2( 300, 710 )
@@ -148,7 +148,6 @@ polygon = PoolVector2Array( -160, -160, 20, -160, 40, -156, 68, -140, 120, -92, 
 occluder = SubResource( 8 )
 
 [node name="Coral_2" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 530, 770 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -192,7 +191,6 @@ region_enabled = true
 region_rect = Rect2( 320, 640, 160, 320 )
 
 [node name="Rock" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 400, 710 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )
@@ -203,7 +201,6 @@ region_rect = Rect2( 0, 480, 320, 160 )
 occluder = SubResource( 9 )
 
 [node name="TileSpike2" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 340, 690 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )

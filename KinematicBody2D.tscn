@@ -18,6 +18,10 @@ scale = Vector2( 3.69057, 0.538223 )
 shape = SubResource( 1 )
 
 [node name="root" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.24132, -1.23722 )
 
-[node name="harpoon_spawn" type="Position2D" parent="."]
-position = Vector2( 119.419, 14.0493 )
+[node name="TurnAxis" type="Position2D" parent="."]
+position = Vector2( 47.8049, 12.8198 )
+
+[node name="CastPoint" type="Position2D" parent="TurnAxis"]
+position = Vector2( 69.4626, -6.14709 )

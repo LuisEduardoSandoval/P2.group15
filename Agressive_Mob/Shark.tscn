@@ -767,7 +767,6 @@ tracks/24/keys = {
 }
 
 [node name="Shark" type="Sprite"]
-editor/display_folded = true
 
 [node name="Body" type="Sprite" parent="."]
 position = Vector2( 0, -1 )
@@ -823,3 +822,10 @@ __meta__ = {
 anims/Attack = SubResource( 1 )
 anims/Base = SubResource( 2 )
 anims/Move = SubResource( 3 )
+
+[node name="hor" type="RayCast2D" parent="."]
+position = Vector2( 97.0577, -1.81175 )
+rotation = -1.5708
+scale = Vector2( 1, 5 )
+enabled = true
+cast_to = Vector2( 0, 25 )

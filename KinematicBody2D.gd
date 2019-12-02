@@ -105,8 +105,9 @@ func _process(delta):
 func SkillLoop():
 	if Input.is_action_pressed("click") and can_fire == true:
 		can_fire = false
+		get_node("root/Hip/Torso/Arm_R/Hand_R/Harpoon_Gun/TurnAxis").rotation = get_angle_to(get_global_mouse_position())
 		var harpoon_instance = harpoon.instance()
-		harpoon_instance.position = get_global_position()
+		harpoon_instance.position = get_node("root/Hip/Torso/Arm_R/Hand_R/Harpoon_Gun/TurnAxis/CastPoint").get_global_position()
 		harpoon_instance.rotation = get_angle_to(get_global_mouse_position())
 		get_parent().add_child(harpoon_instance)
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
