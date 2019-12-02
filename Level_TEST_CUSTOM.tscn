@@ -5,9 +5,9 @@
 [ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Interface.tscn" type="PackedScene" id=4]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Health.gd" type="Script" id=6]
-[ext_resource path="res://artAssets/Backgrounds/background.png" type="Texture" id=7]
-[ext_resource path="res://artAssets/Backgrounds/midground.png" type="Texture" id=8]
+[ext_resource path="res://artAssets/Backgrounds/background.png" type="Texture" id=6]
+[ext_resource path="res://artAssets/Backgrounds/midground.png" type="Texture" id=7]
+[ext_resource path="res://Health.gd" type="Script" id=8]
 [ext_resource path="res://artAssets/lights/spot.png" type="Texture" id=9]
 [ext_resource path="res://KinematicBody2D_angler.tscn" type="PackedScene" id=10]
 [ext_resource path="res://artAssets/Backgrounds/water.png" type="Texture" id=11]
@@ -56,9 +56,6 @@ z_index = 1
 collision_layer = 3
 collision_mask = 3
 
-[node name="Health" type="Node" parent="KinematicBody2D"]
-script = ExtResource( 6 )
-
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
 drag_margin_left = 0.0
@@ -67,7 +64,6 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="KinematicBody2D"]
-editor/display_folded = true
 layer = -22
 offset = Vector2( 650, 750 )
 scale = Vector2( 3.5, 3.5 )
@@ -85,7 +81,7 @@ motion_mirroring = Vector2( 576, 512 )
 [node name="background" type="Sprite" parent="KinematicBody2D/ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 2, 2 )
 z_as_relative = false
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="KinematicBody2D/ParallaxBackground"]
 editor/display_folded = true
@@ -96,8 +92,11 @@ motion_mirroring = Vector2( 960, 512 )
 [node name="midground" type="Sprite" parent="KinematicBody2D/ParallaxBackground/ParallaxLayer2"]
 modulate = Color( 0.423529, 0.368627, 0.368627, 1 )
 position = Vector2( -184.424, -214.55 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 centered = false
+
+[node name="Health" type="Node" parent="KinematicBody2D"]
+script = ExtResource( 8 )
 
 [node name="GLOWSTICK_LIGHT_1" type="Light2D" parent="."]
 position = Vector2( 388.517, 1507.12 )
@@ -162,7 +161,6 @@ collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
 editor/display_folded = true
-visible = false
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
 position = Vector2( -5521.08, -929.903 )
@@ -261,8 +259,17 @@ z_index = -29
 position = Vector2( 2091, 6702 )
 z_index = -29
 
+[node name="Shark_Kinematic2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -840, 5050 )
+scale = Vector2( 1, 1 )
+
+[node name="Shark_Kinematic3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1210.53, 1244.69 )
+rotation = 3.14159
+scale = Vector2( 1, 1 )
+
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1240, 1150 )
+position = Vector2( 3675, 6527.99 )
 scale = Vector2( 1, 1 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 15 )]
@@ -289,6 +296,7 @@ editor/display_folded = true
 
 [node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
+[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 
 [editable path="KinematicBody2D"]
