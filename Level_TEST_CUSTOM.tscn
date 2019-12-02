@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -19,6 +19,10 @@
 [ext_resource path="res://Sound/Music.wav" type="AudioStream" id=17]
 [ext_resource path="res://Win.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Lose.tscn" type="PackedScene" id=19]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 18.0
+height = 200.0
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -161,6 +165,7 @@ collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
 editor/display_folded = true
+visible = false
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
 self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
 position = Vector2( -5521.08, -929.903 )
@@ -259,18 +264,17 @@ z_index = -29
 position = Vector2( 2091, 6702 )
 z_index = -29
 
-[node name="Shark_Kinematic2" parent="." instance=ExtResource( 14 )]
-position = Vector2( -840, 5050 )
-scale = Vector2( 1, 1 )
-
-[node name="Shark_Kinematic3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1210.53, 1244.69 )
-rotation = 3.14159
-scale = Vector2( 1, 1 )
-
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 14 )]
-position = Vector2( 3675, 6527.99 )
+position = Vector2( 1312, 1210 )
 scale = Vector2( 1, 1 )
+
+[node name="Area2D" type="Area2D" parent="Shark_Kinematic"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic/Area2D"]
+position = Vector2( 102, 1 )
+rotation = 1.5708
+shape = SubResource( 1 )
 
 [node name="Harpoon" parent="." instance=ExtResource( 15 )]
 position = Vector2( 15.1791, 197.329 )
@@ -296,7 +300,10 @@ editor/display_folded = true
 
 [node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
-[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
+[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
+[connection signal="body_entered" from="Shark_Kinematic/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
 
 [editable path="KinematicBody2D"]
+
+[editable path="Shark_Kinematic"]
