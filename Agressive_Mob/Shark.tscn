@@ -828,4 +828,4 @@ position = Vector2( 97.0577, -1.81175 )
 rotation = -1.5708
 scale = Vector2( 1, 5 )
 enabled = true
-cast_to = Vector2( 0, 25 )
+cast_to = Vector2( 0, 10 )

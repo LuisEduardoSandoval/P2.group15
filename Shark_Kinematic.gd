@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var speed = 90
 const gravity = 0
+var health = 2
 
 var velocity = Vector2()
 var direction_x = 1
@@ -47,3 +48,10 @@ func _physics_process(delta):
 	
 	
 
+
+
+func _on_Area2D_area_entered(area):
+	health = health - 1
+	if health == 0:
+		get_parent().remove_child(self)
+	pass # Replace with function body.
