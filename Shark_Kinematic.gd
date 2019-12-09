@@ -99,4 +99,9 @@ func _physics_process(delta):
 
 
 func _on_Player_area_area_entered(area):
+<<<<<<< HEAD
 	get_parent().get_node("KinematicBody2D/Health").health -= 20
+=======
+#	$Health.health -= 20
+	pass
+>>>>>>> 02cef9bb010b042952428d4124bd47df91759e13
