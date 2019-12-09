@@ -88,11 +88,11 @@ func _physics_process(delta):
 
 
 
-func _on_Area2D_area_entered(area):
-	health = health - 1
-	if health == 0:
-		get_parent().remove_child(self)
-	pass # Replace with function body.
+#func _on_Area2D_area_entered(area):
+#	health = health - 1
+#	if health == 0:
+#		get_parent().remove_child(self)
+
 
 
 

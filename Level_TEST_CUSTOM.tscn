@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Level_TEST_CUSTOM.gd" type="Script" id=1]
 [ext_resource path="res://CaveTileSet.tres" type="TileSet" id=2]
@@ -14,11 +14,10 @@
 [ext_resource path="res://Neutral_Mob/Tuna/Tuna_Kinematic.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Neutral_Mob/School_Fish/School_Fish_Kinematic.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Agressive_Mob/Shark_Kinematic.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Harpoon.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sound/179927__yosarrian__underwater.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sound/Music.wav" type="AudioStream" id=17]
-[ext_resource path="res://Win.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Lose.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Sound/179927__yosarrian__underwater.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/Music.wav" type="AudioStream" id=16]
+[ext_resource path="res://Win.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Lose.tscn" type="PackedScene" id=18]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 18.0
@@ -342,29 +341,26 @@ position = Vector2( -3.88232, 2.2605 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="Harpoon" parent="." instance=ExtResource( 15 )]
-position = Vector2( 15.1791, 197.329 )
-
 [node name="AudioStreamPlayerUnderwater" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 15 )
 volume_db = -12.0
 autoplay = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 17 )
+stream = ExtResource( 16 )
 volume_db = -20.0
 autoplay = true
 
 [node name="Win" type="CanvasLayer" parent="."]
 editor/display_folded = true
 
-[node name="Win" parent="Win" instance=ExtResource( 18 )]
+[node name="Win" parent="Win" instance=ExtResource( 17 )]
 visible = false
 
 [node name="Lose" type="CanvasLayer" parent="."]
 editor/display_folded = true
 
-[node name="Lose" parent="Lose" instance=ExtResource( 19 )]
+[node name="Lose" parent="Lose" instance=ExtResource( 18 )]
 visible = false
 [connection signal="area_entered" from="KinematicBody2D/Player_area" to="Shark_Kinematic2" method="_on_Player_area_area_entered"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]

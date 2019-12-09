@@ -80,9 +80,6 @@ shape = SubResource( 1 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 648.22, 434.619 )
-
-[node name="TurnAxis" parent="KinematicBody2D" index="2"]
-editor/display_folded = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 
