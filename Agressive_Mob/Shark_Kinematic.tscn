@@ -8,6 +8,7 @@ radius = 13.8998
 height = 170.136
 
 [node name="Shark_Kinematic" type="KinematicBody2D"]
+editor/display_folded = true
 scale = Vector2( -1, 1 )
 collision_layer = 3075
 collision_mask = 3075

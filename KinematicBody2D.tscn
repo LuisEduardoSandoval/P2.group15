@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.13392, 62.1834 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 62.1344, 8.21021 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( 509.22, 320.619 )
@@ -23,3 +26,9 @@ position = Vector2( 47.8049, 12.8198 )
 
 [node name="CastPoint" type="Position2D" parent="TurnAxis"]
 position = Vector2( 69.4626, -6.14709 )
+
+[node name="Player_area" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_area"]
+shape = SubResource( 2 )

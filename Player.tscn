@@ -1516,9 +1516,11 @@ tracks/58/keys = {
 }
 
 [node name="root" type="Sprite"]
+editor/display_folded = true
 position = Vector2( 0.0118866, -0.0077858 )
 
 [node name="Hip" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 7.43127, 0.268585 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 1 )

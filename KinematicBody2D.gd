@@ -9,7 +9,6 @@ var harpoon = preload("res://Harpoon.tscn")
 var can_fire = true
 var rate_of_fire = .5
 
-
 export var gravity: = 30.0
 #export (float) var harpoon_delay = 1
 #var waited = 0
@@ -143,3 +142,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 #	$Health.health -=20
 	yield(get_tree().create_timer(rate_of_fire), "timeout")
+
+
+func _on_Area2D_area_entered(area):
+	$Health.health -=20

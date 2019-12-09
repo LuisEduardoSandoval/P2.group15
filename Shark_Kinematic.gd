@@ -22,7 +22,7 @@ func _ready():
 #	pass
 func player_range():
 	get_node("Shark")
-	if player.position.x < position.x - 500|| player.position.x > position.x + 500:
+	if player.position.x < position.x - 500 || player.position.x > position.x:
 		return false
 	if player.position.x < position.x || player.position.x > position.x:
 		$Shark/AnimationPlayer.play("Attack")
@@ -31,9 +31,11 @@ func player_range():
 	if player.position.y < position.y -300 || player.position.y > position.y +300:
 		return false
 	if player.position.y < position.y  || player.position.y > position.y :
-		$Shark/AnimationPlayer.play("Attack")
 		return true
-	
+	if player.position.x > position.x + 500:
+		return true
+	else:
+		return false
 
 func _physics_process(delta):
 #	velocity.x = speed * direction_x
@@ -45,20 +47,21 @@ func _physics_process(delta):
 #	velocity = (player.position - position).normalized() 
 	velocity = move_and_slide(velocity)
 	# if player.position.x < position.x+ 100 || position.x -100
-	if player.position.x < position.x -10  and player_range():
-		velocity.x = -180
+	if player.position.x < position.x -100  and player_range():
+		velocity.x = -350
 		get_node("Shark").set_scale(Vector2(-1,1))
-	elif player.position.x < position.x +10 and player_range():
-		velocity.x = 180
+	elif player.position.x < position.x -150 and player_range():
+		velocity.x = 350
 		get_node("Shark").set_scale(Vector2(1,1))
 		
 	else: 
 		velocity.x = 0
+
 	
 	if player.position.y < position.y- 50:
-		velocity.y =-150
+		velocity.y =-250
 	elif player.position.y > position.y + 50: 
-		velocity.y =150
+		velocity.y =250
 	else:
 		velocity.y = 0
 	if not player_range():
@@ -90,3 +93,7 @@ func _on_Area2D_area_entered(area):
 	if health == 0:
 		get_parent().remove_child(self)
 	pass # Replace with function body.
+
+
+func _on_Player_area_area_entered(area):
+	$Health.health -= 40
