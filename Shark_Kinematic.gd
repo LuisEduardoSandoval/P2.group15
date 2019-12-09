@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var speed = 90
 const gravity = 0
-var health = 2
+var health = 1
 
 var velocity = Vector2(0,0)
 var direction_x = 1
@@ -88,10 +88,10 @@ func _physics_process(delta):
 
 
 
-#func _on_Area2D_area_entered(area):
-#	health = health - 1
-#	if health == 0:
-#		get_parent().remove_child(self)
+func _on_Area2D_area_entered(area):
+	health = health - 1
+	if health == 0:
+		get_parent().remove_child(self)
 
 
 
@@ -104,3 +104,9 @@ func _on_Player_area_area_entered(area):
 #	$Health.health -= 20
 
 
+
+
+func _on_Harpoon_body_entered(body):
+	health = health - 1
+	if health == 0:
+		get_parent().remove_child(self)
