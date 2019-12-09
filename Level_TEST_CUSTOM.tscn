@@ -291,7 +291,6 @@ collision_layer = 1025
 collision_mask = 1025
 
 [node name="Area2D" type="Area2D" parent="Shark_Kinematic2"]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic2/Area2D"]
 position = Vector2( -3.88232, 2.2605 )
@@ -299,13 +298,16 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Shark_Kinematic3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 2880.29, 4291.85 )
+editor/display_folded = true
+position = Vector2( 2937.53, 6459.18 )
 scale = Vector2( 1, 1 )
 collision_layer = 1025
 collision_mask = 1025
 
+[node name="Shark" parent="Shark_Kinematic3" index="0"]
+editor/display_folded = false
+
 [node name="Area2D" type="Area2D" parent="Shark_Kinematic3"]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic3/Area2D"]
 position = Vector2( -3.88232, 2.2605 )
@@ -313,15 +315,29 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Shark_Kinematic4" parent="." instance=ExtResource( 14 )]
-position = Vector2( -1261.81, 5194.09 )
+editor/display_folded = true
+position = Vector2( -3023.14, 6477.35 )
 scale = Vector2( 1, 1 )
 collision_layer = 1025
 collision_mask = 1025
 
 [node name="Area2D" type="Area2D" parent="Shark_Kinematic4"]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic4/Area2D"]
+position = Vector2( -3.88232, 2.2605 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Shark_Kinematic5" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( -2811.5, 1884.17 )
+scale = Vector2( 1, 1 )
+collision_layer = 1025
+collision_mask = 1025
+
+[node name="Area2D" type="Area2D" parent="Shark_Kinematic5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic5/Area2D"]
 position = Vector2( -3.88232, 2.2605 )
 rotation = 1.5708
 shape = SubResource( 1 )
@@ -350,16 +366,16 @@ editor/display_folded = true
 
 [node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
+[connection signal="area_entered" from="KinematicBody2D/Player_area" to="Shark_Kinematic2" method="_on_Player_area_area_entered"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
-[connection signal="area_entered" from="Shark_Kinematic2/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Shark_Kinematic2/Area2D" to="Shark_Kinematic2" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic2/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="Shark_Kinematic3/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Shark_Kinematic3/Area2D" to="Shark_Kinematic3" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic3/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
-[connection signal="area_entered" from="Shark_Kinematic4/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
 [connection signal="area_entered" from="Shark_Kinematic4/Area2D" to="Shark_Kinematic4" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic4/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Shark_Kinematic5/Area2D" to="Shark_Kinematic5" method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Shark_Kinematic5/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
 
 [editable path="KinematicBody2D"]
 

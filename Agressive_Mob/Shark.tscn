@@ -767,6 +767,7 @@ tracks/24/keys = {
 }
 
 [node name="Shark" type="Sprite"]
+editor/display_folded = true
 
 [node name="Body" type="Sprite" parent="."]
 position = Vector2( 0, -1 )

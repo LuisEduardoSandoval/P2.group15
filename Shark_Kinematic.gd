@@ -95,5 +95,8 @@ func _on_Area2D_area_entered(area):
 	pass # Replace with function body.
 
 
+
+
+
 func _on_Player_area_area_entered(area):
-	$Health.health -= 40
+	get_parent().get_node("KinematicBody2D/Health").health -= 20

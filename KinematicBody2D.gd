@@ -144,5 +144,3 @@ func _on_Area2D_body_entered(body):
 	yield(get_tree().create_timer(rate_of_fire), "timeout")
 
 
-func _on_Area2D_area_entered(area):
-	$Health.health -=20
