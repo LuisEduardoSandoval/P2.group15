@@ -4,32 +4,67 @@ var speed = 90
 const gravity = 0
 var health = 2
 
-var velocity = Vector2()
+var velocity = Vector2(0,0)
 var direction_x = 1
 var direction_y = 1
 var direction = 1
 
+var eye_reach = 90
+var vision = 200
+onready var player = get_parent().get_node("KinematicBody2D")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func player_range():
+	get_node("Shark")
+	if player.position.x < position.x - 500|| player.position.x > position.x + 500:
+		return false
+	if player.position.x < position.x || player.position.x > position.x:
+		$Shark/AnimationPlayer.play("Attack")
+		
+		return true
+	if player.position.y < position.y -300 || player.position.y > position.y +300:
+		return false
+	if player.position.y < position.y  || player.position.y > position.y :
+		$Shark/AnimationPlayer.play("Attack")
+		return true
+	
 
 func _physics_process(delta):
-	velocity.x = speed * direction_x
-	velocity.y = 0
-	
+#	velocity.x = speed * direction_x
+#	velocity.y = 0
 	get_node("Shark").set_scale(Vector2(direction_x,direction_y))
 	$Shark/AnimationPlayer.play("Move")
 	velocity.y += gravity
-	velocity = move_and_slide(velocity)
 	
-
+#	velocity = (player.position - position).normalized() 
+	velocity = move_and_slide(velocity)
+	# if player.position.x < position.x+ 100 || position.x -100
+	if player.position.x < position.x -10  and player_range():
+		velocity.x = -180
+		get_node("Shark").set_scale(Vector2(-1,1))
+	elif player.position.x < position.x +10 and player_range():
+		velocity.x = 180
+		get_node("Shark").set_scale(Vector2(1,1))
+		
+	else: 
+		velocity.x = 0
+	
+	if player.position.y < position.y- 50:
+		velocity.y =-150
+	elif player.position.y > position.y + 50: 
+		velocity.y =150
+	else:
+		velocity.y = 0
+	if not player_range():
+			velocity.x = speed * direction_x
+			velocity.y = 0
+			velocity = move_and_slide(velocity)
 #	if is_on_wall():
 #		direction_x = direction_x * -1
 #		get_node("Shark").set_scale(Vector2(direction_x,direction_y))
@@ -45,7 +80,7 @@ func _physics_process(delta):
 		direction_x = direction_x * -1
 		get_node("Shark").set_scale(Vector2(direction_x,direction_y))
 		
-	
+
 	
 
 

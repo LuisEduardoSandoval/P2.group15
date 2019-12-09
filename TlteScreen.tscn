@@ -20,6 +20,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_top = 20
@@ -56,10 +57,6 @@ margin_bottom = 406.0
 texture_normal = ExtResource( 6 )
 texture_hover = ExtResource( 7 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 636.156, 451.715 )
-z_index = 7
-
 [node name="Area2D" type="KinematicBody2D" parent="."]
 editor/display_folded = true
 
@@ -80,5 +77,13 @@ shape = SubResource( 1 )
 position = Vector2( 960.064, 142.23 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 648.22, 434.619 )
+
+[node name="TurnAxis" parent="KinematicBody2D" index="2"]
+editor/display_folded = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+
+[editable path="KinematicBody2D"]
