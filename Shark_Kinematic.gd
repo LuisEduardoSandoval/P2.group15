@@ -96,4 +96,5 @@ func _on_Area2D_area_entered(area):
 
 
 func _on_Player_area_area_entered(area):
-	$Health.health -= 40
+#	$Health.health -= 20
+	pass
