@@ -55,10 +55,9 @@ layer = 2
 [node name="KinematicBody2D" parent="." groups=[
 "actors",
 ] instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 475, 1226 )
 z_index = 1
-collision_layer = 3
-collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
@@ -165,7 +164,7 @@ collision_mask = 3075
 
 [node name="Water_overlay" type="Sprite" parent="."]
 modulate = Color( 0.207843, 0.254902, 0.286275, 1 )
-self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.882353 )
+self_modulate = Color( 0.117647, 0.290196, 0.396078, 0.803922 )
 position = Vector2( -5521.08, -929.903 )
 scale = Vector2( 7.2075, 11.4833 )
 z_index = 21
@@ -264,12 +263,42 @@ position = Vector2( 2091, 6702 )
 z_index = -29
 
 [node name="Shark_Kinematic" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1312, 1210 )
+editor/display_folded = true
+position = Vector2( 1180, 5600 )
 scale = Vector2( 1, 1 )
+collision_layer = 1025
+collision_mask = 1025
 
 [node name="Area2D" type="Area2D" parent="Shark_Kinematic"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic/Area2D"]
+position = Vector2( -3.88232, 2.2605 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Shark_Kinematic2" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( 1870.13, 2938.49 )
+scale = Vector2( 1, 1 )
+collision_layer = 1025
+collision_mask = 1025
+
+[node name="Area2D" type="Area2D" parent="Shark_Kinematic2"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic2/Area2D"]
+position = Vector2( -3.88232, 2.2605 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Shark_Kinematic3" parent="." instance=ExtResource( 14 )]
+editor/display_folded = true
+position = Vector2( 3038.74, 6437.98 )
+scale = Vector2( 1, 1 )
+
+[node name="Area2D" type="Area2D" parent="Shark_Kinematic3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shark_Kinematic3/Area2D"]
 position = Vector2( -3.88232, 2.2605 )
 rotation = 1.5708
 shape = SubResource( 1 )
@@ -299,10 +328,15 @@ editor/display_folded = true
 [node name="Lose" parent="Lose" instance=ExtResource( 19 )]
 visible = false
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
-[connection signal="health_changed" from="KinematicBody2D/Health" to="Shark_Kinematic" method="_on_Health_health_changed"]
 [connection signal="area_entered" from="Shark_Kinematic/Area2D" to="Shark_Kinematic" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Shark_Kinematic2/Area2D" to="Shark_Kinematic2" method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Shark_Kinematic2/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
+[connection signal="area_entered" from="Shark_Kinematic3/Area2D" to="Shark_Kinematic3" method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Shark_Kinematic3/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
 
 [editable path="KinematicBody2D"]
 
 [editable path="Shark_Kinematic"]
+
+[editable path="Shark_Kinematic3"]

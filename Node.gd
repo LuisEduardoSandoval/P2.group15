@@ -1,11 +1,10 @@
 extends Node
 
 
-
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer/TextureButton.grab_focus()
 	$KinematicBody2D/root/AnimationPlayer.play("idle")
-	
+
 
 
 func _physics_process(delta):
@@ -17,7 +16,9 @@ func _physics_process(delta):
 		$MarginContainer/VBoxContainer/VBoxContainer/TextureButton2.grab_focus()
 
 func _on_TextureButton_pressed():
-	get_tree().change_scene("Level_TEST_CUSTOM.tscn")
+	get_tree().change_scene("res://Level_TEST_CUSTOM.tscn")
+	
+	
 
 
 func _on_TextureButton2_pressed():

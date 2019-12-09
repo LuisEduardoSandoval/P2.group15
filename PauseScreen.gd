@@ -34,3 +34,4 @@ func _on_TextureButton_pressed():
 
 func _on_TextureButton2_pressed():
 	get_tree().quit()
+	
