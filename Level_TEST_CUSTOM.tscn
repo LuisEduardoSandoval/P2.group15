@@ -57,26 +57,26 @@ layer = 2
 position = Vector2( 475, 1226 )
 z_index = 1
 
+[node name="root" parent="KinematicBody2D" index="1"]
+editor/display_folded = true
+
 [node name="Head" parent="KinematicBody2D/root/Hip/Torso" index="1"]
 editor/display_folded = true
 
-[node name="Arm_R" parent="KinematicBody2D/root/Hip/Torso" index="4"]
-editor/display_folded = true
-
 [node name="Arm_L" parent="KinematicBody2D/root" index="1"]
-position = Vector2( 31.7993, -4.3158 )
+position = Vector2( 31.7403, -4.88879 )
 
 [node name="Hand_L" parent="KinematicBody2D/root" index="2"]
-position = Vector2( -0.00567627, -0.0982666 )
+position = Vector2( 0.0305786, -0.00622559 )
 
 [node name="Leg_L" parent="KinematicBody2D/root" index="3"]
-position = Vector2( -6.27872, -4.86145 )
+position = Vector2( -6.04871, -4.26978 )
 
 [node name="Shin_L" parent="KinematicBody2D/root" index="4"]
-position = Vector2( -30.0362, -4.86145 )
+position = Vector2( -29.7897, -3.3833 )
 
 [node name="Flipper_L" parent="KinematicBody2D/root" index="5"]
-position = Vector2( -58.1612, -5.14648 )
+position = Vector2( -56.5912, 4.36267 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
@@ -365,6 +365,7 @@ visible = false
 [connection signal="area_entered" from="KinematicBody2D/Player_area" to="Shark_Kinematic2" method="_on_Player_area_area_entered"]
 [connection signal="health_changed" from="KinematicBody2D/Health" to="CanvasLayer/Interface" method="_on_Health_health_changed"]
 [connection signal="area_entered" from="Shark_Kinematic2/Area2D" to="Shark_Kinematic2" method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="Shark_Kinematic2/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic2/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
 [connection signal="area_entered" from="Shark_Kinematic3/Area2D" to="Shark_Kinematic3" method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Shark_Kinematic3/Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
